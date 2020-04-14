@@ -1,7 +1,7 @@
 # Advanced Algorithms & Data Structures
 Weekly prac codes for FIT3155- Advanced algorithms & data structures
 
-| Week[i]/Prac[i+1] | Algorithm | Notes |
+| Week(i)/Prac(i+1) | Algorithm | Notes |
 |-----------|-----------|-------|
 | Week 1 | Z-algorithm | O(M+N) linear string searching. Concatenate pat$text |
 | Week 2 | Boyer Moore | Using z-algorithm for generating good suffix & matched prefix array. Include Galil's optimization |
