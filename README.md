@@ -1,7 +1,7 @@
 # Advanced Algorithms & Data Structures
 ### Weekly prac codes for FIT3155- Advanced algorithms & data structures
 
-| Week(i)/Prac(i+1) | Algorithm | Notes |
+| Week[i] | Algorithm | Notes |
 |-----------|-----------|-------|
 | Week 1 | Z-algorithm | O(M+N) linear string searching. Concatenate pat$text |
 | Week 2 | Boyer Moore | Used z-algorithm to generate good suffix & matched prefix array. Included Galil's optimization. <br>  Code not included for week 2 prac on normal Boyer Moore. Reversed Boyer Moore is implemented instead. Right to left scanning, left to right letter comparisons, good prefix & matched suffix array. |
