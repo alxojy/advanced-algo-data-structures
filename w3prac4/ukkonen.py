@@ -12,7 +12,7 @@ class Node:
     If it is a leaf, it'll be initialised with a not null value for the leaf.
     """
 
-    def __init__(self, leaf=None, suffix_link=None, size=26):
+    def __init__(self, leaf=None, suffix_link=None, size=256):
         self.edges = [None]*size # default size = 26 for 26 alphabets
         self.suffix_link = suffix_link # suffix link to another node
         self.leaf = leaf # store information if node is a leaf
@@ -47,18 +47,20 @@ class SuffixTree:
 
     def __init__(self, text):
         self.text = text # text to build suffix tree
-        self.root = Node() # root node
+        self.root = Node(False) # root node
         self.e = End() # global end
+        self.j = 0
 
     def ord_position(self, index):
         # lowercase characters
-        return ord(self.text[index]) - 97
+        return ord(self.text[index]) 
 
     def length(self, start, end):
         # return the length of the edge
         return end - start + 1
 
     def get_end(self, val):
+
         try:
             ret = val.get_global_end() # global end
         except: 
@@ -76,9 +78,6 @@ class SuffixTree:
             (active_node, j) = self.update(active_node, (j, i))
             (active_node, j) = self.canonize(active_node, (j, i))
         
-        # checking
-        self.check(self.root)
-        print(self.e.get_global_end())
         return self.root
 
     def update(self, node, val):
@@ -87,14 +86,15 @@ class SuffixTree:
         # return: active node and left pointer
 
         left, end = val[0], val[1]
-        print("update", left, end)
 
         prev = self.root # previous node
         (end_point, r) = self.test_and_split(node, (left, end-1), end)
 
         while not end_point:
+            
             # rule 2 - edge does not exist. add edge to existing node
-            r.add_edge(self.ord_position(end),((end, self.e), Node(True, self.root)))
+            r.add_edge(self.ord_position(end),((end, self.e), Node(self.j, self.root)))
+            self.j += 1
 
             if prev != self.root:
                 # add suffix link if there were previous rule 2 in iteration i (i in build_tree())
@@ -115,7 +115,6 @@ class SuffixTree:
         # return bool and active node. bool = True when encounter rule 3. else, bool = False
 
         left, end = val[0], val[1]
-        print("test", left, end)
 
         if left <= end:
             edge = node.get_edge(self.ord_position(left))
@@ -151,7 +150,6 @@ class SuffixTree:
         # traverse till the node is explicit (edge from the node is a leaf)
 
         left, end = val[0], val[1]
-        print("canon", left, end)
 
         # edge case
         if node is None:
@@ -179,24 +177,17 @@ class SuffixTree:
 
         return (node, left)
 
-    def values(self, i):
-        # print values for checking
-        print(i, self.active_node, self.active_edge, self.active_length, self.remainder)
-    
-    def check(self, node):
-        # traverse tree
+    def suffix_array(self, node, suffix_arr=[]):
+        # perform DFS lexographically and return the suffix array
         if node is None:
             return
         else:
+            if type(node.leaf) == int:
+                suffix_arr.append(node.leaf)
             for i in range(len(node.edges)):
                 if node.edges[i] is not None:
-                    print(node, node.get_suffix_link(), node.edges[i][0][0], node.edges[i][0][1], node.edges[i][1])
-                    self.check(node.edges[i][1])
-
-# function calls to test
-#SuffixTree('abcabxabcyab').build_tree() # success
-#SuffixTree('mississippi').build_tree() # success
-#SuffixTree('dedododeeodoeodooedeeododooodoede').build_tree() # success
-#SuffixTree('abcabxabcyab').build_tree()
+                    self.suffix_array(node.edges[i][1], suffix_arr)
+        
+        return suffix_arr
 
 
