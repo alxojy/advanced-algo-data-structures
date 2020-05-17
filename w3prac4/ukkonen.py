@@ -1,6 +1,3 @@
-# Megan Ooi
-# 30101670
-
 # Ukkonen code implementation heavily references the Ukkonen algorithm in Esso Ukkonen's paper.
 # https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf
 
@@ -62,7 +59,6 @@ class SuffixTree:
         return end - start + 1
 
     def get_end(self, val):
-
         try:
             ret = val.get_global_end() # global end
         except: 
@@ -184,9 +180,11 @@ class SuffixTree:
         return (node, left)
 
     def values(self, i):
+        # print values for checking
         print(i, self.active_node, self.active_edge, self.active_length, self.remainder)
     
     def check(self, node):
+        # traverse tree
         if node is None:
             return
         else:
@@ -195,9 +193,10 @@ class SuffixTree:
                     print(node, node.get_suffix_link(), node.edges[i][0][0], node.edges[i][0][1], node.edges[i][1])
                     self.check(node.edges[i][1])
 
+# function calls to test
 #SuffixTree('abcabxabcyab').build_tree() # success
 #SuffixTree('mississippi').build_tree() # success
-#SuffixTree('dedododeeodoeodooedeeododooodoede').build_tree() # tree correct but links are wrong????
-SuffixTree('abcabxabcyab').build_tree()
+#SuffixTree('dedododeeodoeodooedeeododooodoede').build_tree() # success
+#SuffixTree('abcabxabcyab').build_tree()
 
 
