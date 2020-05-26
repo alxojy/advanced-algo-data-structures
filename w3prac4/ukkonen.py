@@ -1,3 +1,5 @@
+# alex o
+
 # Ukkonen code implementation heavily references the Ukkonen algorithm in Esso Ukkonen's paper.
 # https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf
 
