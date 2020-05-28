@@ -14,6 +14,7 @@
 | Week 7 | B-trees | |
 | Week 8 | Miller Rabin | Primality test | 
 | Week 9 | Huffman encoding | Using built-in python heap: heapq. Reference: http://math.ubbcluj.ro/~tradu/TI/huffmancode.pdf | 
+| | Elias Omega | Encoding integers | 
 | | LZSS | |
 
 
