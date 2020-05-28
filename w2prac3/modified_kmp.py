@@ -1,5 +1,4 @@
-# Megan Ooi Jie Yi
-# 30101670
+# alex o
 
 import sys
 
