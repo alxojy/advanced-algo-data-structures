@@ -13,4 +13,7 @@
 | Week 6 | Fibonacci heap | Added a lookup table for O(1) search. <br> Code implementation based on: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap21.htm |
 | Week 7 | B-trees | |
 | Week 8 | Miller Rabin | | 
+| Week 9 | Huffman encoding | Using built-in python heap: heapq. Reference: http://math.ubbcluj.ro/~tradu/TI/huffmancode.pdf | 
+| | LZSS | |
+
 
