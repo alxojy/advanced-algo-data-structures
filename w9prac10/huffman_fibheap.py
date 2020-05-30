@@ -194,7 +194,7 @@ class Huffman:
         # create priority queue based on frequency of chars
         for i in range(len(self.dictionary)):
             if self.dictionary[i] > 0:
-                self.heap.insert(self.get_character(i), self.dictionary[i])
+                self.heap.insert(self.get_character(i), self.dictionary[i]) # O(1) insert
                 self.unique_chars += 1
 
         self.huffman()
