@@ -175,7 +175,6 @@ class Huffman:
         self.dictionary = [0]*size # default size = 256 for 256 alphabets
         self.heap = FibonacciHeap() # min heap
         self.unique_chars = 0 # number of unique characters
-        self.encoded = [None]*size # stores encoding for each char
         self.calculate_frequency() # calculate frequency of each char in text
 
     def ord_position(self, char):
@@ -195,19 +194,14 @@ class Huffman:
         # create priority queue based on frequency of chars
         for i in range(len(self.dictionary)):
             if self.dictionary[i] > 0:
-                #self.heap.append((self.dictionary[i], self.get_character(i)))
                 self.heap.insert(self.get_character(i), self.dictionary[i])
                 self.unique_chars += 1
-
-        #heapq.heapify(self.heap)
 
         self.huffman()
         
     def huffman(self):
         # huffman coding using priority queue
         for i in range(1, self.unique_chars):
-            #first = heapq.heappop(self.heap)
-            #second = heapq.heappop(self.heap)
             first = self.heap.extract_min()
             second = self.heap.extract_min()
             
@@ -216,7 +210,6 @@ class Huffman:
 
             new = (first.payload + second.payload, first.key + second.key) # add both frequencies
             self.heap.insert(first.key + second.key, first.payload + second.payload)
-            #heapq.heappush(self.heap, new)
     
     def encode(self, elem, left):
         for char in elem.key:
