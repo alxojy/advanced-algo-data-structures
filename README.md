@@ -12,7 +12,7 @@
 | Week 5 | Binomial heap | Added a lookup table for O(1) search. <br> Code implementation based on: http://www.cs.toronto.edu/~anikolov/CSC265F19/binomial-heaps.pdf |
 | Week 6 | Fibonacci heap | Added a lookup table for O(1) search. <br> Code implementation based on: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap21.htm |
 | Week 7 | B-trees | |
-| Week 8 | Miller Rabin | Primality test | 
+| Week 8 | Miller Rabin | Primality test with repeated squaring | 
 | Week 9 | Huffman encoding | Method 1: Using built-in python heap: heapq. Reference: http://math.ubbcluj.ro/~tradu/TI/huffmancode.pdf. Involves traversal to get code. <br> Method 2: Using fibonacci heap. Build encoding while manipulating heap without traversal. | 
 | | Elias Omega | Encoding integers | 
 | | LZSS | |
