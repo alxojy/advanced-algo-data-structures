@@ -21,7 +21,7 @@
 
 ## Note
 
-This repo has been created to share my implementations for algorithms taught in FIT3155 Advanced Algo & Data Structures unit. Some implementations have not been tested (might contain bugs) and I am not responsible for any damage caused. I do not condone the act of plagiarism so only use my work as a reference, if you wish.  
+This repo has been created to share my implementation for algorithms taught in FIT3155 Advanced Algo & Data Structures unit. Some implementations have not been tested (might contain bugs) and I am not responsible for any damage caused. I do not condone the act of plagiarism so only use my work as a reference, if you wish.  
 
 ## Plagiarism notice
 Copying or plagiarising code is a serious offence and will result in a breach in the Academic Integrity Policy https://www.monash.edu/students/academic/policies/academic-integrity. I will not be held responsible for any of these breaches.
