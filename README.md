@@ -1,4 +1,4 @@
-# FIT3155 Advanced Algorithms & Data Structures
+# Advanced Algorithms & Data Structures
 ### Weekly prac codes
 
 | Week[i] | Algorithm | Notes |
